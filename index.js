@@ -22,7 +22,7 @@ getConversionRate = async (from, to = "USD") => {
       }
     );
   } catch(ex) {
-    console.log(ex.message);
+    console.log(`"${from}" => "${to}":  ${ex.message}`);
   }
   if (response) {
     // success
