@@ -1,8 +1,8 @@
 require('dotenv').config();
-const { tokens, apiKey } = require('minimist')(process.argv.slice(2));
+const { tokens, apikey } = require('minimist')(process.argv.slice(2));
 
-if(process.env.API_KEY == undefined && apiKey == undefined){
-  console.log("Argument apiKey is required (usage: --apiKey=\"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX\" get your api key from https://pro.coinmarketcap.com/account)");
+if(process.env.API_KEY == undefined && apikey == undefined){
+  console.log("Argument apikey is required (usage: --apikey=\"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX\" get your api key from https://pro.coinmarketcap.com/account)");
   return;
 }
 
@@ -21,7 +21,7 @@ getConversionRate = async (from, to = "USD") => {
       `https://pro-api.coinmarketcap.com/v2/tools/price-conversion?convert=${to}&symbol=${from}&amount=1`,
       {
         headers: {
-          'X-CMC_PRO_API_KEY': apiKey || process.env.API_KEY,
+          'X-CMC_PRO_API_KEY': apikey || process.env.API_KEY,
         },
       }
     );
