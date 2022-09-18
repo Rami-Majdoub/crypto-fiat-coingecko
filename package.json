@@ -1,14 +1,32 @@
 {
-  "name": "crypto-price",
+  "name": "crypto-fiat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Get exchange rates from the terminal.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "crypto",
+    "fiat",
+    "cryptocurrency",
+    "exchange rate",
+    "currency"
+  ],
+  "bin": {
+    "crypto-fiat": "index.js"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rami-Majdoub/crypto-fiat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rami-Majdoub/crypto-fiat/issues"
+  },
+  "homepage": "https://github.com/Rami-Majdoub/crypto-fiat",
+  "author": "Rami Majdoub",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
