@@ -4,7 +4,7 @@ installation
 
 token symbol (API id)
 
-[![token symbol](https://github.com/Rami-Majdoub/crypto-fiat-coingecko/assets/37843591/7d44147a-44d2-47c2-b20c-b7623875a3e6)](https://www.coingecko.com/en/coins/bitcoin)
+[![token symbol](https://github-production-user-asset-6210df.s3.amazonaws.com/37843591/253742940-7d44147a-44d2-47c2-b20c-b7623875a3e6.png)](https://www.coingecko.com/en/coins/bitcoin)
 
 get 1 token price in usd
 
