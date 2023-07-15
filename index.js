@@ -1,37 +1,26 @@
 require('dotenv').config();
-const { tokens, apikey } = require('minimist')(process.argv.slice(2));
-
-if(process.env.API_KEY == undefined && apikey == undefined){
-  console.log("Argument apikey is required (usage: --apikey=\"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX\" get your api key from https://pro.coinmarketcap.com/account)");
-  return;
-}
+const { tokens } = require('minimist')(process.argv.slice(2));
 
 if(tokens == undefined){
-  console.log("Argument tokens is required (usage: --tokens=\"ETH\")");
+  console.log("Argument tokens is required (usage: --tokens=\"bitcoin\")");
   return;
 }
 
 const axios = require('axios');
 
-// https://coinmarketcap.com/api/documentation/v1/#operation/getV2ToolsPriceconversion
-getConversionRate = async (from, to = "USD") => {
+getConversionRate = async (from, to="usd") => {
   let response;
   try {
-    response = await axios.get(
-      `https://pro-api.coinmarketcap.com/v2/tools/price-conversion?convert=${to}&symbol=${from}&amount=1`,
-      {
-        headers: {
-          'X-CMC_PRO_API_KEY': apikey || process.env.API_KEY,
-        },
-      }
-    );
+    response = await axios.get(`https://api.coingecko.com/api/v3/coins/${from.toLowerCase()}`);
   } catch(ex) {
-    console.log(`1 ${from.padEnd(10)} = ${to}: error(${ex.message})`);
+    console.log(`1 ${from.padEnd(10)} = ${to.toUpperCase()}: error(${ex.message})`);
   }
   if (response) {
     // success
-    const [ result ] = response.data.data;
-    console.log(`1 ${result.symbol.padEnd(10)} = ${result.quote[to].price} ${to}`);
+    const resNameTo = to.toUpperCase();
+    const resNameFrom = response.data.symbol.toUpperCase();
+    const resPrice = response.data.market_data.current_price[to.toLowerCase()];
+    console.log(`1 ${resNameFrom.padEnd(10)} = ${resPrice} ${resNameTo}`);
   }
 }
 

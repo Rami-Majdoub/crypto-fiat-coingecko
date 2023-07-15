@@ -1,5 +1,5 @@
 {
-  "name": "crypto-fiat",
+  "name": "crypto-fiat-coingecko",
   "version": "1.0.1",
   "description": "Get exchange rates from the terminal.",
   "main": "index.js",
@@ -11,20 +11,21 @@
     "fiat",
     "cryptocurrency",
     "exchange rate",
-    "currency"
+    "currency",
+    "coingecko"
   ],
   "bin": {
-    "crypto-fiat": "run"
+    "crypto-fiat-coingecko": "run"
   },
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rami-Majdoub/crypto-fiat.git"
+    "url": "https://github.com/Rami-Majdoub/crypto-fiat-coingecko.git"
   },
   "bugs": {
-    "url": "https://github.com/Rami-Majdoub/crypto-fiat/issues"
+    "url": "https://github.com/Rami-Majdoub/crypto-fiat-coingecko/issues"
   },
-  "homepage": "https://github.com/Rami-Majdoub/crypto-fiat",
+  "homepage": "https://github.com/Rami-Majdoub/crypto-fiat-coingecko",
   "author": "Rami Majdoub",
   "license": "MIT",
   "dependencies": {
